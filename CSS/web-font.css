@@ -1,0 +1,15 @@
+/* Register */
+@font-face {
+    font-family: 'PP Supply Mono';
+    src: url('./assets/fonts/PPSupplyMono-Regular.woff2') format('woff2'),
+        url('./assets/fonts/PPSupplyMono-Regular.woff') format('woff'),
+        url('./assets/fonts/PPSupplyMono-Regular.svg#PPSupplyMono-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Display */
+p {
+    font-family: 'PP Supply Mono';
+}

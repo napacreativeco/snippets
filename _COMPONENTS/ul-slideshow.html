@@ -1,0 +1,42 @@
+<ul class="image-list">
+    <li>
+        <img src="" alt="" />
+    </li>
+</ul>
+
+<a class="control next">
+    <svg xmlns="http://www.w3.org/2000/svg" width="17.434" height="33.454" viewBox="0 0 17.434 33.454">
+        <g id="Group_25" data-name="Group 25" transform="translate(0.707 0.707)">
+            <path id="Line_10" data-name="Line 10" d="M15.313,16.727-.707.707.707-.707l16.02,16.02Z" transform="translate(0)"/>
+            <path id="Line_11" data-name="Line 11" d="M.707,16.727-.707,15.313,15.313-.707,16.727.707Z" transform="translate(0 16.02)"/>
+        </g>
+    </svg>
+</a>
+<a class="control prev">
+    <svg xmlns="http://www.w3.org/2000/svg" width="17.434" height="33.454" viewBox="0 0 17.434 33.454">
+        <g id="Group_25" data-name="Group 25" transform="translate(0.707 0.707)">
+        <path id="Line_10" data-name="Line 10" d="M15.313,16.727-.707.707.707-.707l16.02,16.02Z" transform="translate(0)"/>
+        <path id="Line_11" data-name="Line 11" d="M.707,16.727-.707,15.313,15.313-.707,16.727.707Z" transform="translate(0 16.02)"/>
+        </g>
+    </svg>
+</a>
+
+<script>
+      var wit = jQuery('ul.image-list').scrollLeft();
+      var theWidth = jQuery('.image-list img').width();
+  
+  
+      jQuery('.next').on('click', function() {
+          var wit = $('ul.image-list').scrollLeft();
+          wit = wit + theWidth;
+          jQuery('ul.image-list').animate({ scrollLeft: wit }, 500);
+          console.log(theWidth);
+  
+      });
+      jQuery('.prev').on('click', function() {
+          var wit = $('ul.image-list').scrollLeft();
+          wit = wit - theWidth;
+          jQuery('ul.image-list').animate({ scrollLeft: wit }, 500);
+          console.log(theWidth)
+      });  
+</script>

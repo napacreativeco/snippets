@@ -1,0 +1,86 @@
+{% comment %}
+
+   HOW TO: Create page template in JSON format. 
+
+{% endcomment %}
+
+
+{% comment %}
+-------------
+PAGE TEMPLATE [ example: /theme/templates/page.discography.json ]
+-------------
+{% endcomment %}
+{
+    "sections": {
+      "main": {
+        "type": "NAME_OF_SECTION_FILE",
+        "blocks": {
+          "5a3a748f-dec3-4361-8bc6-0d08f731d393": {
+            "type": "release",
+            "settings": {
+              "release_artwork": "shopify:\/\/shop_images\/yung-kayo.png",
+              "release_title": "DFTK",
+            }
+          }
+        },
+        "block_order": [
+          "5a3a748f-dec3-4361-8bc6-0d08f731d393"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+}
+  
+
+{% comment %}
+------------
+SECTION FILE [ example: /theme/sections/NAME_OF_SECTION_FILE.liquid ]
+------------
+{% endcomment %}
+<ul>
+
+    {% for block in section.blocks %}
+    {% case block.type %}
+        {% when 'release' %}
+
+            <li class="{{ block.shopify_attributes }}">
+
+                <img src="{{ block.settings.release_artwork | image_url: width: 2048 }}" alt="{{ block.settings.release_title }} by {{ block.settings.artist_name }}" />
+                <p>{{ block.settings.release_title }}</p>
+                
+            </li>
+
+        {% endcase %}
+    {% endfor %}
+
+</ul>
+
+{% schema %}
+{
+  "name": "Discography",
+  "tag": "section",
+  "class": "discography",
+  "blocks": [
+     {
+       "name": "Release",
+       "type": "release",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "release_artwork",
+           "label": "Cover art"
+         },
+         {
+            "type": "text",
+            "id": "release_title",
+            "label": "Release name"
+          },
+       ]
+     }
+   ]
+}
+{% endschema %}

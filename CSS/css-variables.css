@@ -1,0 +1,14 @@
+/* Register: Globally */
+:root {
+    --black: #0f0f0f;
+}
+
+/* or Register to an Element */
+.example {
+    --black: #0f0f0f;
+}
+
+/* Display */
+.example {
+    color: var(--black);
+}
